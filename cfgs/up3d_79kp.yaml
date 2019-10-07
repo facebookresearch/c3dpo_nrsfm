@@ -1,0 +1,98 @@
+!!python/object/new:tools.attr_dict.AttrDict
+dictitems:
+  DATASET: !!python/object/new:tools.attr_dict.AttrDict
+    dictitems:
+      TEST: !!python/object/new:tools.attr_dict.AttrDict
+        dictitems:
+          limit_to: -1
+          rand_sample: -1
+      TRAIN: !!python/object/new:tools.attr_dict.AttrDict
+        dictitems:
+          limit_to: -1
+          rand_sample: 2700000
+      VAL: !!python/object/new:tools.attr_dict.AttrDict
+        dictitems:
+          limit_to: -1
+          rand_sample: -1
+      dataset_name: up3d_79kp
+      force_download: false
+      sets_to_load: !!python/tuple
+      - train
+      - val
+  MODEL: !!python/object/new:tools.attr_dict.AttrDict
+    dictitems:
+      argmin_translation: true
+      camera_scale: false
+      camera_translation: false
+      camera_xy_translation: false
+      canonicalization: !!python/object/new:tools.attr_dict.AttrDict
+        dictitems:
+          n_fully_connected: 1024
+          n_layers: 6
+          n_rand_samples: 4
+          rot_angle: 3.141592653589793
+          use: true
+      connectivity_setup: NONE
+      depth_offset: 0.0
+      huber_scaling: 0.01
+      independent_phi_for_aug: true
+      keypoint_norm_type: to_mean
+      keypoint_rescale: 1.0
+      log_vars:
+      - objective
+      - dist_reprojection
+      - l_reprojection
+      - l_canonicalization
+      loss_weights: !!python/object/new:tools.attr_dict.AttrDict
+        dictitems:
+          l_canonicalization: 1.0
+          l_reprojection: 1.0
+      n_fully_connected: 1024
+      n_keypoints: 79
+      n_layers: 6
+      perspective_depth_threshold: 0.1
+      projection_type: orthographic
+      replace_keypoints_with_input: true
+      reprojection_normalization: kp_total_count
+      root_joint: 0
+      shape_basis_size: 50
+      weight_init_std: 0.01
+      z_augment: true
+      z_augment_rot_angle: 3.14
+      z_equivariance: true
+      z_equivariance_rot_angle: 0.3925
+  SOLVER: !!python/object/new:tools.attr_dict.AttrDict
+    dictitems:
+      PARAM_GROUPS: !!python/tuple []
+      betas: !!python/tuple
+      - 0.9
+      - 0.999
+      breed: sgd
+      freeze_bn: false
+      gamma: 0.1
+      lr: 0.001
+      lr_policy: multistep
+      max_epochs: 70
+      milestones:
+      - 50
+      - 60
+      momentum: 0.9
+      weight_decay: 0.0005
+  batch_size: 256
+  cfg_file: null
+  exp_dir: ./data/exps/c3dpo/up3d_79kp
+  exp_idx: 0
+  exp_name: up3d_79kp
+  gpu_idx: 0
+  metric_print_interval: 5
+  model_zoo: ./data/torch_zoo/
+  num_workers: 8
+  resume: true
+  resume_epoch: -1
+  seed: 0
+  store_checkpoints: true
+  store_checkpoints_purge: 3
+  visdom_env: pretrained_up3d_79kp
+  visdom_port: 8097
+  visdom_server: http://localhost
+  visualize_interval: 300

@@ -1,0 +1,7 @@
+torch==1.1.0
+numpy
+tqdm
+matplotlib
+visdom
+pyyaml
+tabulate
