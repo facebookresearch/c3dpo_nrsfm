@@ -15,7 +15,7 @@ Dependencies
 This is a Python 3.6 package. Required packages can be installed with e.g. `pip` and `conda`:
 ```
 > conda create -n c3dpo python=3.6
-> pip install -r requirements.txt
+> pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
 The complete list of dependencies:
